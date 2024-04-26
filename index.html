@@ -84,7 +84,7 @@
       <p class="u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> Hello ,welcome .My name is Victor Gathecha ,I am Web and App Developer located in Nairobi,&nbsp;<br>Kenya and I work internationally Online.<span style="font-size: 1rem;"></span>
       </p>
       <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius u-btn-1">HIRE ME </a>
-      <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius u-btn-2">DOWNLOAD CV </a>
+      <a href="#" id="downloadButton" class="bn30 u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius u-btn-2">DOWNLOAD CV </a>
       <div class="custom-expanded u-list u-list-1">
         <div class="u-repeater u-repeater-1">
           <div class="u-border-2 u-border-grey-50 u-container-style u-list-item u-repeater-item">
@@ -400,5 +400,71 @@ background-color: #4d4d4d !important; transparency: 45 !important
         </a>
       </p>
     </section>
-  
+  <script>
+    document.getElementById("downloadButton").addEventListener("click", function () {
+      // Create a Blob object for the image
+      var blob = new Blob(["cv.png"], { type: "image/png" });
+
+      // Create a temporary URL for the Blob object
+      var url = URL.createObjectURL(blob);
+
+      // Create a temporary download link
+      var downloadLink = document.createElement("a");
+      downloadLink.href = url;
+      downloadLink.download = "cv.png";
+
+      // Simulate a click on the download link
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+
+      // Clean up
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(url);
+    });
+    const jobTitles = ["Victor", "Web Developer", "App Developer", "Mobile repairer"]; // Add more job titles here if needed
+    let currentIndex = 0;
+
+    function typeJobTitle(title, index, callback) {
+      if (index < title.length) {
+        document.getElementById('job-title').textContent += title.charAt(index);
+        setTimeout(function () {
+          typeJobTitle(title, index + 1, callback);
+        }, 100); // Adjust typing speed here (milliseconds)
+      } else {
+        setTimeout(callback, 0); // Delay before switching to the next title
+      }
+    }
+
+    function changeJobTitle() {
+      const currentTitle = jobTitles[currentIndex];
+      document.getElementById('job-title').textContent = ''; // Clear previous text
+      typeJobTitle(currentTitle, 0, function () {
+        currentIndex = (currentIndex + 1) % jobTitles.length;
+        setTimeout(changeJobTitle, 900); // Delay before switching to the next title
+      });
+    }
+
+    changeJobTitle();
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+
+  </script>
 </body></html>
