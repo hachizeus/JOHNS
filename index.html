@@ -138,9 +138,49 @@
           <span style="font-weight: 700;">About Me</span>
         </h3>
         <p id="isPasted">
-          <span style="font-size: 0.875rem;">Hey there, I'm Victor Gathecha, and I'm all about tech and pushing boundaries.Currently, I'm studying Information Science at the University of Nairobi, but that's just the start of my journey. I wear many hats - I'm a web designer who crafts visually stunning and user-friendly websites, a skilled mobile repairer ensuring your devices stay in top shape, and an app developer constantly innovating solutions to real-world problems. What drives me? Ambition and hard work. I thrive in challenging environments, always hungry for opportunities to learn and grow. When you work with me, you're not just getting a service provider- you're getting a dedicated partner committed to bringing your digital dreams to life.<br>&nbsp;Let's collaborate and make some magic happen!
+          <span style="font-size: 0.875rem;">Hey there, I'm Victor Gathecha, 
+		  and I'm all about tech and pushing boundaries.Currently, I'm studying Information Science at the University of Nairobi,
+		  but that's just the start of my journey. I wear many hats - I'm a web designer who crafts visually stunning and user-friendly websites,
+		  a skilled mobile repairer ensuring your devices stay in top shape, and an app developer constantly innovating solutions to
+		  real-world problems. What drives me? Ambition and hard work. I thrive in challenging environments, always hungry for opportunities to
+		  learn and grow. When you work with me, you're not just getting a service provider- you're getting a dedicated partner committed to bringing 
+		  your digital dreams to life.<br>&nbsp;Let's collaborate and make some magic happen!
           </span>
         </p>
+	      <div class="dropdown">
+      <span>Skills</span>
+      <div class="dropdown-content">
+               <ul>
+          <li>Web Developing</li>
+          <li>App Developing</li>
+          <li>Mobile Repair</li>
+          <!-- Add more skills as needed -->
+        </ul>
+      </div>
+    </div>
+  
+    <div class="dropdown">
+      <span>Experience</span>
+      <div class="dropdown-content">
+               <ul>
+          <li>Intermediate</li>
+          <!-- Add more experience levels as needed -->
+        </ul>
+      </div>
+    </div>
+  
+    <div class="dropdown">
+      <span>Education</span>
+      <div class="dropdown-content">
+               <ul>
+          <li>High School</li>
+          <li>University</li>
+          <li>Bachelor's Degree</li>
+          <li>college</li>
+          <!-- Add more education levels as needed -->
+        </ul>
+      </div>
+    </div>
       </div>
       <img  class="u-border-1 u-border-custom-color-6 u-hover-feature u-image u-image-round u-image-2" src="images/lapi.jpg" alt="" data-image-width="6000" data-image-height="4000" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="500">
       <h3 id="Services" class="u-custom-font u-text u-text-13">SERVICES<span style="font-weight: 700;"></span>
@@ -510,5 +550,58 @@ background-color: #4d4d4d !important; transparency: 45 !important
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+	.dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .dropdown-content ul li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .dropdown-content ul li:hover {
+      background-color: #ddd;
+      color:black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown span {
+      cursor: pointer;
+      position: relative;
+      padding-right: 10px; /* Added padding for the bulb */
+    }
+
+    .dropdown span::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px; /* Height of the sliding underline */
+      background-color: transparent;
+      transition: background-color 0.3s ease; /* Transition effect */
+    }
+
+    .dropdown span:hover::after {
+      background-color: red; /* Color of the sliding underline */
+    }
 </style>
 </html>
