@@ -459,7 +459,7 @@ background-color: #4d4d4d !important; transparency: 45 !important
   <script>
     document.getElementById("downloadButton").addEventListener("click", function () {
       // Create a Blob object for the image
-      var blob = new Blob(["cv1.png"], { type: "image/png" });
+      var blob = new Blob(["Screenshot 2024-04-29 194659.png"], { type: "image/png" });
 
       // Create a temporary URL for the Blob object
       var url = URL.createObjectURL(blob);
@@ -467,7 +467,7 @@ background-color: #4d4d4d !important; transparency: 45 !important
       // Create a temporary download link
       var downloadLink = document.createElement("a");
       downloadLink.href = url;
-      downloadLink.download = "cv1.png";
+      downloadLink.download = "Screenshot 2024-04-29 194659.png";
 
       // Simulate a click on the download link
       document.body.appendChild(downloadLink);
